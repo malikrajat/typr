@@ -7,7 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "menu": "node scripts/commands.mjs",
+    "app:dev": "tauri dev",
+    "app:build": "tauri build",
+    "app:build:debug": "tauri build --debug",
+    "check": "tsc --noEmit",
+    "rust:check": "cargo check --manifest-path src-tauri/Cargo.toml",
+    "rust:test": "cargo test --manifest-path src-tauri/Cargo.toml",
+    "rust:fmt": "cargo fmt --manifest-path src-tauri/Cargo.toml",
+    "clean": "node scripts/commands.mjs clean",
+    "clean:rust": "node scripts/commands.mjs clean:rust",
+    "setup:sidecar": "node scripts/build-sidecar.mjs",
+    "doctor": "node scripts/commands.mjs doctor"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.10.1",
